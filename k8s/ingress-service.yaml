@@ -1,4 +1,4 @@
-apiVersion: extensions/v1betav1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: fib-ingress-service
