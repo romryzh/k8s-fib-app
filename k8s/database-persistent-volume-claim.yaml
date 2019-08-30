@@ -8,5 +8,6 @@ spec:
   resources:
     requests:
       storage: 2Gi
+  storageClassName: slow
   volumeMode: Filesystem
   volumeName: nfs-pv
