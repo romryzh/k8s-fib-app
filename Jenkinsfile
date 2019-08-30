@@ -8,17 +8,18 @@ node {
 
     tag = readFile('commit-id').replace("\n", "").replace("\r", "")
     registryHost = "172.18.16.10:30400/"
-    imageName = "${registryHost}${appName}:${tag}"
-    env.BUILDIMG=imageName
-    env.BUILD_TAG=tag
 
     stage "Build"
 
-        sh "docker build -t ${imageName} applications/puzzle"
+        sh "docker build -t ${registryHost}/server server/"
+        sh "docker build -t ${registryHost}/client client/"
+        sh "docker build -t ${registryHost}/worker worker/"
 
     stage "Push"
 
-        sh "docker push ${imageName}"
+        sh "docker push ${registryHost}/server"
+        sh "docker push ${registryHost}/client"
+        sh "docker push ${registryHost}/worker"
 
     stage "Deploy"
 
