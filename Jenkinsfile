@@ -11,15 +11,15 @@ node {
 
     stage "Build"
 
-        sh "docker build -t ${registryHost}/server server/"
-        sh "docker build -t ${registryHost}/client client/"
-        sh "docker build -t ${registryHost}/worker worker/"
+        sh "docker build -t ${registryHost}server server/"
+        sh "docker build -t ${registryHost}client client/"
+        sh "docker build -t ${registryHost}worker worker/"
 
     stage "Push"
 
-        sh "docker push ${registryHost}/server"
-        sh "docker push ${registryHost}/client"
-        sh "docker push ${registryHost}/worker"
+        sh "docker push ${registryHost}server"
+        sh "docker push ${registryHost}client"
+        sh "docker push ${registryHost}worker"
 
     stage "Deploy"
 
