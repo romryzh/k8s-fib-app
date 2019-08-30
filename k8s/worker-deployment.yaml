@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: 172.18.16.10:30400/worker
+          image: 127.0.0.1:30400/worker
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service

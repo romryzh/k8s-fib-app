@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: 172.18.16.10:30400/client
+          image: 127.0.0.1:30400/client
           ports:
             - containerPort: 3000
