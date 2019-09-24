@@ -23,5 +23,5 @@ node {
 
     stage "Deploy"
 
-        kubernetesDeploy configs: "k8s/*.yaml", kubeconfigId: 'dmf_kube'
+        kubernetesDeploy configs: "k8s/*.yaml", kubeconfigId: 'kenzan_kubeconfig'
 }
